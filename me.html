@@ -1,0 +1,674 @@
+---
+layout: cv
+title: Markdown 使用指南
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>张树铭 | Web前端与可视化工程师</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: #E6F0FA; /* Light blue inspired by ZStack */
+      color: #4A4A4A;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+    li{
+        list-style: none;
+    }
+
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      display: flex;
+      background: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sidebar {
+      width: 30%;
+      background: #FFFFFF;
+      padding: 30px;
+      border-right: 2px solid #0052CC; /* Vibrant blue */
+    }
+
+    .profile-pic {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #0052CC;
+      object-fit: cover;
+    }
+
+    .main-content {
+      width: 70%;
+      padding: 30px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 25px;
+      background: #0052CC;
+      color: #FFFFFF;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 20px;
+    }
+
+    .header-title {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 2.2em;
+      font-weight: 600;
+    }
+
+    .header-subtitle {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .section {
+      margin: 20px 0;
+    }
+
+    .section h2 {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.8em;
+      color: #0052CC;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .section h2 i {
+      margin-right: 10px;
+      color: #0052CC;
+    }
+
+    .section h3 {
+      font-size: 1.4em;
+      color: #4A4A4A;
+      margin: 10px 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .info-grid p {
+      padding: 10px;
+      background: #B3D4FF; /* Pale blue */
+      border-radius: 6px;
+      border: 1px solid #0052CC;
+      display: flex;
+      align-items: center;
+    }
+
+    .info-grid p i {
+      margin-right: 10px;
+      color: #0052CC;
+    }
+
+    .project-card, .timeline-item {
+      background: #FFFFFF;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #B3D4FF;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover, .timeline-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 82, 204, 0.2);
+    }
+
+    .project-card .toggle-btn {
+      cursor: pointer;
+      color: #0052CC;
+      font-size: 0.9em;
+      margin-top: 10px;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .project-card .toggle-btn:hover {
+      color: #003d99;
+    }
+
+    .project-details {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .project-details.active {
+      display: block;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+    }
+
+    .skill-item span {
+      width: 120px;
+      font-weight: bold;
+      color: #4A4A4A;
+    }
+
+    .skill-bar {
+      flex-grow: 1;
+      height: 12px;
+      background: #B3D4FF;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #0052CC;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: #0052CC;
+      transition: width 1.5s ease-in-out;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #0052CC;
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .timeline-item::before {
+      content: '\f111';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: -25px;
+      top: 10px;
+      width: 14px;
+      height: 14px;
+      background: #FFFFFF;
+      border: 2px solid #0052CC;
+      border-radius: 50%;
+      color: #0052CC;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item:hover::before {
+      transform: scale(1.2);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #B3D4FF;
+      border-radius: 0 0 10px 10px;
+      margin-top: 20px;
+      color: #4A4A4A;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    /* Typing Animation */
+    .typing::after {
+      content: '|';
+      color: #0052CC;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container { flex-direction: column; }
+      .sidebar, .main-content { width: 100%; }
+      .sidebar { border-right: none; border-bottom: 2px solid #0052CC; }
+      .header-title { font-size: 1.8em; }
+      .section h2 { font-size: 1.6em; }
+      .timeline { padding-left: 20px; }
+      .timeline::before { left: 8px; }
+      .timeline-item::before { left: -18px; }
+      .profile-pic img { width: 100px; height: 100px; }
+    }
+
+    @media (max-width: 480px) {
+      .header-title { font-size: 1.5em; }
+      .section h2 { font-size: 1.4em; }
+      .header-subtitle { font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <div class="container">
+    <div class="sidebar">
+      <div class="profile-pic">
+        <img src="/assets/cv/me.JPG" alt="张树铭头像">
+      </div>
+      <section class="section personal-info">
+        <h2><i class="fas fa-user"></i> 个人信息</h2>
+        <div class="info-grid">
+          <p><i class="fas fa-id-card"></i> <strong>姓名:</strong> 张树铭</p>
+          <p><i class="fas fa-venus-mars"></i> <strong>性别:</strong> 男</p>
+          <p><i class="fas fa-birthday-cake"></i> <strong>年龄:</strong> 26岁 (1998年7月)</p>
+          <p><i class="fas fa-briefcase"></i> <strong>工作经验:</strong> 6年</p>
+          <p><i class="fas fa-map-marker-alt"></i> <strong>现居:</strong> 上海 | <strong>户口:</strong> 临汾</p>
+          <p><i class="fas fa-user-check"></i> <strong>状态:</strong> 离职</p>
+          <p><i class="fas fa-phone"></i> <strong>手机:</strong> 13391970870</p>
+          <p><i class="fas fa-envelope"></i> <strong>邮箱:</strong> 13391970870@163.com</p>
+        </div>
+      </section>
+      <section class="section skills">
+        <h2><i class="fas fa-tools"></i> 专业技能</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span>H5+CSS3</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>JavaScript</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Cesium</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Openlayers</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Vue2/Vue3</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Webpack/Vite</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Node.js</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Electron</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>TypeScript</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Nginx</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>MySQL</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 50%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <span>Xshell</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width: 50%;"></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="section other">
+        <h2><i class="fas fa-info-circle"></i> 其他信息</h2>
+        <p><i class="fas fa-graduation-cap"></i> <strong>培训:</strong> 高级Web工程师 | 开课吧 | 2020.08 - 2020.12</p>
+        <p><i class="fas fa-language"></i> <strong>语言:</strong> 英语（读写良好，听说一般）</p>
+      </section>
+    </div>
+    <div class="main-content">
+      <section class="section job-intention">
+        <h2><i class="fas fa-bullseye"></i> 求职意向</h2>
+        <div class="info-grid">
+          <p><i class="fas fa-map-marker-alt"></i> <strong>期望地区:</strong> 上海</p>
+          <p><i class="fas fa-money-bill-wave"></i> <strong>期望月薪:</strong> 19000元/月</p>
+          <p><i class="fas fa-briefcase"></i> <strong>工作性质:</strong> 全职</p>
+          <p><i class="fas fa-code"></i> <strong>期望职业:</strong> Web前端开发 / 移动端开发（uniapp） / WebGis开发（Cesium/Openlayers）</p>
+        </div>
+      </section>
+      <section class="section self-description">
+        <h2><i class="fas fa-user-circle"></i> 个人简介</h2>
+        <p>
+          我是张树铭，一名拥有6年经验的Web前端与可视化工程师，专注于打造Web PC端、移动端（uniapp）、WebGis（Cesium/Openlayers）以及跨平台桌面应用（Electron）。我能独立完成从需求分析到项目上线的全流程，熟悉各端开发的技术挑战，擅长按时交付高质量成果。目前正向全栈开发进军，已掌握Java和Node.js技能，期待在技术领域创造更多可能！
+        </p>
+        <h3>核心技术栈</h3>
+        <ul class="project-technology">
+          <li> <strong>JavaScript/TypeScript:</strong> 熟练运用，熟悉主流IDE</li>
+          <li> <strong>Vue2/Vue3:</strong> 精通组件化开发与性能优化</li>
+          <li> <strong>Webpack/Vite:</strong> 灵活配置项目构建环境</li>
+          <li> <strong>Uniapp:</strong> 独立完成移动端应用开发</li>
+          <li> <strong>Electron:</strong> 跨平台桌面应用开发经验</li>
+          <li> <strong>Cesium/Openlayers:</strong> 精通3D/2D可视化开发</li>
+          <li> <strong>VMware/Linux/macOS:</strong> 熟练操作虚拟机与命令行</li>
+          <li> <strong>Nginx:</strong> 熟练搭建与配置Web服务器</li>
+          <li> <strong>Shell工具:</strong> 熟练使用Xshell、Mobaxterm</li>
+        </ul>
+        <h3>补充技能</h3>
+        <ul>
+          <li> <strong>Java:</strong> 实现简单服务端逻辑，学习后端开发</li>
+          <li> <strong>Node.js (Express/Koa2):</strong> 模块化开发，连接MySQL</li>
+        </ul>
+      </section>
+      <section class="section project-experience">
+        <h2><i class="fas fa-project-diagram"></i> 项目经验</h2>
+        <div class="project-card">
+          <h3>3XX11 (2023.09 - 至今)</h3>
+          <p><strong>项目描述:</strong> 针对M方作战方案的沙盘推演系统，利用Cesium和Openlayers实现2D/3D可视化，模拟作战流程并优化方案。</p>
+          <div class="project-details">
+            <p><strong>技术栈:</strong> Cesium, Openlayers, Turfjs, Vue, Webpack, Nginx, Docker, VMware, Gitlab, Esxi6.5</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>搭建Cesium+Openlayers可视化框架，满足2D/3D需求</li>
+              <li>现场对接用户需求，优化功能实现方案</li>
+              <li>独立完成80%功能开发，攻克多项技术难点</li>
+              <li>下载全国15级、全球12级地图瓦片，耗时3个月</li>
+              <li>采用Docker+VMware部署，深入研究虚拟化技术</li>
+              <li>部署ArcgisServer管理矢量数据</li>
+            </ul>
+            <p><strong>特色:</strong> 2D/3D联动、时间轴控制、WebGLPointsLayer优化、WebSocket聊天室、拖放棋子、导出PPT/Word、地图工具（比例尺、测量等）</p>
+          </div>
+          <span class="toggle-btn">展开详情</span>
+        </div>
+        <div class="project-card">
+          <h3>1XX0 (2024.12 - 至今)</h3>
+          <p><strong>项目描述:</strong> 多子系统管理平台，采用“一托七”架构，统一管理静态资源与工具库。</p>
+          <div class="project-details">
+            <p><strong>技术栈:</strong> Vue, Vite, Antv@G2, Openlayers, Nginx, Gitlab, Nexus</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>搭建“一托七”项目框架，制定代码规范</li>
+              <li>创建Git仓库，集成Nexus实现离线依赖管理</li>
+              <li>开发Antv@G2拓扑图及Openlayers地图模块</li>
+            </ul>
+            <p><strong>特色:</strong> 低耦合架构、黑白主题切换、rem排版、Antv@L7地图模块</p>
+          </div>
+          <span class="toggle-btn">展开详情</span>
+        </div>
+        <div class="project-card">
+          <h3>1XX8 (2024.07 - 2025.01)</h3>
+          <p><strong>项目描述:</strong> 卫星数据操控系统，支持数据采集、信号干扰及终端信号模拟。</p>
+          <div class="project-details">
+            <p><strong>技术栈:</strong> Vue, Vite, Openlayers, Antv@G2, ElementPlus, Tinymce</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>搭建项目框架，优化毫秒级数据更新</li>
+              <li>从Leaflet切换至Openlayers，提升2D可视化能力</li>
+              <li>二次封装ElementPlus组件，优化用户体验</li>
+              <li>在Kylin系统上使用Docker+VMware部署</li>
+            </ul>
+            <p><strong>特色:</strong> WebSocket实时推送、点位聚合、定制化富文本编辑、SVG硬件拓扑、Blob数据下载</p>
+          </div>
+          <span class="toggle-btn">展开详情</span>
+        </div>
+        <div class="project-card">
+          <h3>多XX电 (2022.07 - 2023.04)</h3>
+          <p><strong>项目描述:</strong> 三维可视化系统，模拟通信链路有效性，分为终端层、传输层和用户层。</p>
+          <div class="project-details">
+            <p><strong>技术栈:</strong> Vue, Webpack, Echarts, Nginx</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>重构冗余代码，提升系统性能</li>
+              <li>现场开发，快速响应用户需求</li>
+              <li>部署本地数据与接口数据双版本</li>
+            </ul>
+            <p><strong>特色:</strong> 三层结构可视化、未知坐标环形展示、多媒体数据支持</p>
+          </div>
+          <span class="toggle-btn">展开详情</span>
+        </div>
+        <div class="project-card">
+          <h3>居信地产后台一体化系统 (2021.10 - 2022.06)</h3>
+          <p><strong>项目描述:</strong> SaaS系统，用于管理房源与业务员绩效，支持公盘私盘与业务审批。</p>
+          <div class="project-details">
+            <p><strong>技术栈:</strong> Vue, Webpack, Element-Ui, Git, Nginx</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>参与技术路线规划，搭建项目框架</li>
+              <li>管理Gitlab仓库，制定代码规范</li>
+              <li>使用Worktile管理开发进度</li>
+              <li>解决线上问题，优化系统性能</li>
+            </ul>
+            <p><strong>特色:</strong> 房源管理、绩效考核、业务审批流程</p>
+          </div>
+          <span class="toggle-btn">展开详情</span>
+        </div>
+        <div class="project-card">
+          <h3>vips气象台短时预报预警系统 (2020.06 - 2021.10)</h3>
+          <p><strong>项目描述:</strong> 配合天气监测设备，渲染区域内天气数据到地图，支持历史天气查看与分析。</p>
+          <div class="project-details">
+            <p><strong>技术栈:</strong> Vue, Electron, Cesium, Element-Ui, Vue-cli, Git</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>使用Electron和Vue-cli搭建Web应用开发环境</li>
+              <li>配置Webpack优化打包质量，使用Eslint规范代码</li>
+              <li>开发前端业务模块，接入Element-Ui实现敏捷开发</li>
+              <li>使用Lighthouse优化项目性能</li>
+              <li>通过Xshell管理Nginx环境下的版本</li>
+            </ul>
+            <p><strong>特色:</strong> 天气数据可视化、历史天气存储与分析、地图渲染、性能优化</p>
+          </div>
+          <span class="toggle-btn">展开详情</span>
+        </div>
+        <div class="project-card">
+          <h3>vips (2019.08 - 2020.10)</h3>
+          <p><strong>项目描述:</strong> 天气监测与预报系统，提供临近天气模拟及实用工具（测量、高度尺、截图等）。</p>
+          <div class="project-details">
+            <p><strong>技术栈:</strong> Vue, Electron, Cesium, Element-Ui, Vue-cli, Svn</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>搭建Vue-cli前端框架，集成Cesium进行三维地图开发</li>
+              <li>实现多端适配（移动端与Web应用）使用CSS3 rem</li>
+              <li>使用Axios和WebSocket进行前后端通信</li>
+              <li>通过Lighthouse测试性能，优化代码体积</li>
+            </ul>
+            <p><strong>特色:</strong> 三维地图（支持gltf、3D Tiles等）、多端适配、实用工具集</p>
+          </div>
+          <span class="toggle-btn">展开详情</span>
+        </div>
+      </section>
+      <section class="section work-experience">
+        <h2><i class="fas fa-briefcase"></i> 工作经历</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>深亘信息科技（上海） (2022.07 - 至今)</h3>
+            <p><strong>职位:</strong> Web可视化工程师 | 18700元/月</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>独立完成3个项目，核心开发2个项目</li>
+              <li>制定项目规划，调研技术框架</li>
+              <li>搭建Openlayers通用地图框架（测距、定位等）</li>
+              <li>下载全国12-15级地图瓦片，耗时3个月</li>
+              <li>指导应届生，部署离线环境项目</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h3>衍复信息技术有限公司 (2021.10 - 2022.06)</h3>
+            <p><strong>职位:</strong> Web前端组长 | 16500元/月</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>管理项目开发、任务分配与代码规范</li>
+              <li>搭建管理系统与移动端应用框架</li>
+              <li>优化系统性能，解决线上问题</li>
+              <li>管理云存储资源，协助团队考核</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h3>雷象科技（北京） (2019.08 - 2021.10)</h3>
+            <p><strong>职位:</strong> Web前端工程师 | 14400元/月</p>
+            <p><strong>职责:</strong></p>
+            <ul>
+              <li>对接项目需求，搭建项目框架</li>
+              <li>开发业务模块，优化系统性能</li>
+              <li>管理代码仓库，分享技术经验</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section education">
+        <h2><i class="fas fa-graduation-cap"></i> 教育经历</h2>
+        <p><strong>广东开放大学</strong> | 工商企业管理 | 大专 | 2022 - 2025</p>
+      </section>
+      <footer class="footer">
+        感谢审阅我的简历！期待与您共同探索技术新可能！
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Particle Background Animation
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+        this.opacity = Math.random() * 0.5 + 0.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.opacity -= 0.005;
+        if (this.opacity <= 0) {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.opacity = Math.random() * 0.5 + 0.5;
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 82, 204, ${this.opacity})`;
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 50; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Typing Effect for Header
+    const title = document.querySelector('.header-title');
+    const text = '张树铭';
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        title.textContent = text.slice(0, index + 1);
+        index++;
+        setTimeout(type, 200);
+      } else {
+        title.classList.remove('typing');
+      }
+    }
+    setTimeout(type, 500);
+
+    // Toggle Project Details (Default Collapsed)
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const details = btn.previousElementSibling;
+        details.classList.toggle('active');
+        btn.textContent = details.classList.contains('active') ? '收起详情' : '展开详情';
+      });
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animate Skill Bars on Load
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      const width = bar.style.width;
+      bar.style.width = '0';
+      setTimeout(() => {
+        bar.style.width = width;
+      }, 500);
+    });
+  </script>
+</body>
+</html>

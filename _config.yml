@@ -1,3 +1,3 @@
-name: zhangshuming,website
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+# Site settings
+title: zhangshuming Blog
+description: zhangshuming blog

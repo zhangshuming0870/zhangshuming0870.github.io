@@ -1,25 +1,17 @@
-<!doctype html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body class="post-container">
-    <div class="header">
-        {% include header.html %}
-    </div>
+<body class="cv-layout">
     <section>
         {{ content }}
     </section>
-    <footer>
-        {% include footer.html %}
-    </footer>
 </body>
+
 <style lang="scss">
-    .post-container {
+    .cv-layout {
         background-color: #f5f5d5;
         height: 100%;
         display: flex;
@@ -28,4 +20,3 @@
         justify-content: space-between;
     }
 </style>
-</html>

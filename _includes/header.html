@@ -1,0 +1,23 @@
+<div class="header">
+    <nav class="header-router">
+        <a href="/">主页</a>
+        <a href="{{ site.posts.first.url }}">最新日志</a>
+    </nav>
+    <input type="text" placeholder="搜素文章"/>
+</div>
+<style lang="scss">
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        .header-router{
+            display: flex;
+            a{
+                margin-right:10px;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
+</style>
