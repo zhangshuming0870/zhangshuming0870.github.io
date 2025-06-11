@@ -4,11 +4,14 @@ title: Markdown 使用指南
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>张树铭 | Web前端与可视化工程师</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     * {
@@ -19,14 +22,16 @@ title: Markdown 使用指南
 
     body {
       font-family: 'Noto Sans SC', sans-serif;
-      background: #E6F0FA; /* Light blue inspired by ZStack */
+      background: #E6F0FA;
+      /* Light blue inspired by ZStack */
       color: #4A4A4A;
       line-height: 1.6;
       position: relative;
       overflow-x: hidden;
     }
-    li{
-        list-style: none;
+
+    li {
+      list-style: none;
     }
 
     #particle-canvas {
@@ -55,7 +60,8 @@ title: Markdown 使用指南
       width: 30%;
       background: #FFFFFF;
       padding: 30px;
-      border-right: 2px solid #0052CC; /* Vibrant blue */
+      border-right: 2px solid #0052CC;
+      /* Vibrant blue */
     }
 
     .profile-pic {
@@ -120,6 +126,14 @@ title: Markdown 使用指南
       margin: 10px 0;
     }
 
+    .section .job-assets{
+      float: right;
+      margin-top: 10px;
+      a{
+        margin-left:10px;
+      }
+    }
+
     .info-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -128,7 +142,8 @@ title: Markdown 使用指南
 
     .info-grid p {
       padding: 10px;
-      background: #B3D4FF; /* Pale blue */
+      background: #B3D4FF;
+      /* Pale blue */
       border-radius: 6px;
       border: 1px solid #0052CC;
       display: flex;
@@ -140,7 +155,8 @@ title: Markdown 使用指南
       color: #0052CC;
     }
 
-    .project-card, .timeline-item {
+    .project-card,
+    .timeline-item {
       background: #FFFFFF;
       padding: 15px;
       margin: 10px 0;
@@ -149,7 +165,8 @@ title: Markdown 使用指南
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .project-card:hover, .timeline-item:hover {
+    .project-card:hover,
+    .timeline-item:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 12px rgba(0, 82, 204, 0.2);
     }
@@ -274,29 +291,69 @@ title: Markdown 使用指南
     }
 
     @keyframes blink {
-      50% { opacity: 0; }
+      50% {
+        opacity: 0;
+      }
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .container { flex-direction: column; }
-      .sidebar, .main-content { width: 100%; }
-      .sidebar { border-right: none; border-bottom: 2px solid #0052CC; }
-      .header-title { font-size: 1.8em; }
-      .section h2 { font-size: 1.6em; }
-      .timeline { padding-left: 20px; }
-      .timeline::before { left: 8px; }
-      .timeline-item::before { left: -18px; }
-      .profile-pic img { width: 100px; height: 100px; }
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar,
+      .main-content {
+        width: 100%;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 2px solid #0052CC;
+      }
+
+      .header-title {
+        font-size: 1.8em;
+      }
+
+      .section h2 {
+        font-size: 1.6em;
+      }
+
+      .timeline {
+        padding-left: 20px;
+      }
+
+      .timeline::before {
+        left: 8px;
+      }
+
+      .timeline-item::before {
+        left: -18px;
+      }
+
+      .profile-pic img {
+        width: 100px;
+        height: 100px;
+      }
     }
 
     @media (max-width: 480px) {
-      .header-title { font-size: 1.5em; }
-      .section h2 { font-size: 1.4em; }
-      .header-subtitle { font-size: 1em; }
+      .header-title {
+        font-size: 1.5em;
+      }
+
+      .section h2 {
+        font-size: 1.4em;
+      }
+
+      .header-subtitle {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
+
 <body>
   <canvas id="particle-canvas"></canvas>
   <div class="container">
@@ -322,51 +379,75 @@ title: Markdown 使用指南
         <div class="skills-grid">
           <div class="skill-item">
             <span>H5+CSS3</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>JavaScript</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>Cesium</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>Openlayers</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>Vue2/Vue3</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>Webpack/Vite</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>Node.js</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 70%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>Electron</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 70%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>TypeScript</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 70%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>Nginx</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 70%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>MySQL</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 50%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 50%;"></div>
+            </div>
           </div>
           <div class="skill-item">
             <span>Xshell</span>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 50%;"></div></div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 50%;"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -378,18 +459,24 @@ title: Markdown 使用指南
     </div>
     <div class="main-content">
       <section class="section job-intention">
+        <div class="job-assets">
+          <a href="/assets/cv/cv.docx">word简历</a>
+          <a href="/assets/cv/cv.pdf">pdf简历</a>
+        </div>
         <h2><i class="fas fa-bullseye"></i> 求职意向</h2>
         <div class="info-grid">
           <p><i class="fas fa-map-marker-alt"></i> <strong>期望地区:</strong> 上海</p>
           <p><i class="fas fa-money-bill-wave"></i> <strong>期望月薪:</strong> 19000元/月</p>
           <p><i class="fas fa-briefcase"></i> <strong>工作性质:</strong> 全职</p>
-          <p><i class="fas fa-code"></i> <strong>期望职业:</strong> Web前端开发 / 移动端开发（uniapp） / WebGis开发（Cesium/Openlayers）</p>
+          <p><i class="fas fa-code"></i> <strong>期望职业:</strong> Web前端开发 / 移动端开发（uniapp） / WebGis开发（Cesium/Openlayers）
+          </p>
         </div>
       </section>
       <section class="section self-description">
         <h2><i class="fas fa-user-circle"></i> 个人简介</h2>
         <p>
-          我是张树铭，一名拥有6年经验的Web前端与可视化工程师，专注于打造Web PC端、移动端（uniapp）、WebGis（Cesium/Openlayers）以及跨平台桌面应用（Electron）。我能独立完成从需求分析到项目上线的全流程，熟悉各端开发的技术挑战，擅长按时交付高质量成果。目前正向全栈开发进军，已掌握Java和Node.js技能，期待在技术领域创造更多可能！
+          我是张树铭，一名拥有6年经验的Web前端与可视化工程师，专注于打造Web
+          PC端、移动端（uniapp）、WebGis（Cesium/Openlayers）以及跨平台桌面应用（Electron）。我能独立完成从需求分析到项目上线的全流程，熟悉各端开发的技术挑战，擅长按时交付高质量成果。目前正向全栈开发进军，已掌握Java和Node.js技能，期待在技术领域创造更多可能！
         </p>
         <h3>核心技术栈</h3>
         <ul class="project-technology">
@@ -415,7 +502,8 @@ title: Markdown 使用指南
           <h3>3XX11 (2023.09 - 至今)</h3>
           <p><strong>项目描述:</strong> 针对M方作战方案的沙盘推演系统，利用Cesium和Openlayers实现2D/3D可视化，模拟作战流程并优化方案。</p>
           <div class="project-details">
-            <p><strong>技术栈:</strong> Cesium, Openlayers, Turfjs, Vue, Webpack, Nginx, Docker, VMware, Gitlab, Esxi6.5</p>
+            <p><strong>技术栈:</strong> Cesium, Openlayers, Turfjs, Vue, Webpack, Nginx, Docker, VMware, Gitlab, Esxi6.5
+            </p>
             <p><strong>职责:</strong></p>
             <ul>
               <li>搭建Cesium+Openlayers可视化框架，满足2D/3D需求</li>
@@ -653,7 +741,7 @@ title: Markdown 使用指南
 
     // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
@@ -671,4 +759,5 @@ title: Markdown 使用指南
     });
   </script>
 </body>
+
 </html>
