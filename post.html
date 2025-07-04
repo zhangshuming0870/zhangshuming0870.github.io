@@ -1,5 +1,6 @@
 ---
 layout: post
+is_post_list: true
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -35,6 +36,7 @@ layout: post
 <body>
     <div class="container">
         <div class="articles-grid">
+            <h1>文章列表</h1>
             {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
             {% for post in sorted_posts %}
             <article class="article-card {% if forloop.first %}featured{% endif %}" data-url="{{ post.url }}">
