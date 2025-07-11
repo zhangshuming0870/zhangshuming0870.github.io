@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mac权限管理完全指南：从基础到高级操作"
-date: 2025-01-15
+date: 2023-01-15
 categories: [其他]
 tags: [macOS, 权限管理, 系统安全, 终端操作, chmod, chown, 文件权限]
 excerpt: '深入解析macOS权限系统，包括文件权限、用户权限、应用权限等各个方面，并提供实用的权限管理技巧和常见问题解决方案。'
