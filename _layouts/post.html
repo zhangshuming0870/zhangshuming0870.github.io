@@ -1024,20 +1024,22 @@
 
         .filtered-posts-list {
             display: grid;
-            gap: 1rem;
+            gap: 2rem;
         }
 
         .filtered-post-item {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
-            transition: all 0.2s ease;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            line-height: 2.0;
         }
 
         .filtered-post-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px var(--shadow-color);
+            box-shadow: 0 4px 16px var(--shadow-color);
+            border-color: var(--accent-color);
         }
 
         .filtered-post-link {
@@ -1047,32 +1049,44 @@
         }
 
         .filtered-post-title {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
         }
 
         .filtered-post-meta {
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: var(--text-secondary);
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
         .filtered-post-tags {
             display: flex;
-            gap: 0.3rem;
-            margin-top: 0.5rem;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .filtered-post-tag {
             background: var(--bg-secondary);
             color: var(--text-secondary);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .filtered-post-tag:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
         }
     </style>
 </head>
@@ -1265,7 +1279,7 @@
                         <div class="search-result-title">${post.title}</div>
                         <div class="search-result-excerpt">${post.excerpt}</div>
                         <div class="search-result-meta">
-                            📅 ${post.date} | 📂 ${post.categories.join(', ')}
+                            date ${post.date} | 📂 ${post.categories.join(', ')}
                         </div>
                     </div>
                 `).join('');
@@ -1621,7 +1635,7 @@
                         <a href="${post.url}" class="filtered-post-link">
                             <div class="filtered-post-title">${post.title}</div>
                             <div class="filtered-post-meta">
-                                <span>📅 ${post.date}</span>
+                                <span>date ${post.date}</span>
                                 <span>📂 ${post.categories.join(', ')}</span>
                             </div>
                             ${post.tags.length > 0 ? `
