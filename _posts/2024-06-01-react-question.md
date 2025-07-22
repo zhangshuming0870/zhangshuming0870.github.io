@@ -16,17 +16,3 @@ author: zhangshuming
 ![3](/assets/question/1/Snipaste_2025-07-21_09-35-32.png)
 发现是有个3.3G的视频文件，将视频移除后提交成功
 
-
-# 通过dmg安装mysql后，在控制台输入mysql 显示没找到命令
-
-```
-echo 'export PATH="/usr/local/mysql/bin:\$PATH"' >> ~/.zshrc
-source ~/.zshrc
-```
-输入这个代码解决
-
-#sudo ls 什么命令都用不了了mac
-执行
-```
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:\$PATH"
-```
