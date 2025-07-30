@@ -2,7 +2,7 @@
 layout: post
 title: "react问题汇总"
 date: 2023-09-12
-categories: [其他]
+categories: [前端]
 tags: [react,nextjs]
 author: zhangshuming
 ---

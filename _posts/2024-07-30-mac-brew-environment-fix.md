@@ -2,7 +2,7 @@
 layout: post
 title: "Mac上Brew环境变量问题解决方案"
 date: 2024-07-30 11:00:00 +0800
-categories: [macOS, 环境配置, 故障排除]
+categories: [其他]
 tags: [brew, homebrew, 环境变量, PATH, zsh, macOS]
 author: shatang
 ---

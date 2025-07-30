@@ -2,7 +2,7 @@
 layout: post
 title: "Mac 下 MySQL 使用指南"
 date: 2024-09-10
-categories: [数据库]
+categories: [其他]
 tags: [MySQL, Mac]
 author: zhangshuming
 ---
