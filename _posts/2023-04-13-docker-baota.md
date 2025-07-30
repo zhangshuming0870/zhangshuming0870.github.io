@@ -2,7 +2,7 @@
 layout: post
 title: "宝塔docker部署"
 date: 2023-04-07
-categories: [其他]
+categories: [后端]
 tags: [docker, 宝塔]
 author: zhangshuming
 ---
