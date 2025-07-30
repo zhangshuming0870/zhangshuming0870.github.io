@@ -314,6 +314,11 @@
             color: white;
         }
 
+        .category-工具 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: white;
+        }
+
         /* 标签样式 */
         .post-tags {
             margin-bottom: 1.5rem;
@@ -375,8 +380,9 @@
 
         .category-tab {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 0.5rem 0.8rem;
+            padding: 0.2rem 0.4rem;
             background: var(--bg-secondary);
             border-radius: 6px;
             cursor: pointer;
@@ -1207,6 +1213,10 @@
                         <div class="category-tab" data-category="其他">
                             <span class="category-name">其他</span>
                             <span class="category-count">{{ site.categories['其他'].size }}</span>
+                        </div>
+                        <div class="category-tab" data-category="工具">
+                            <span class="category-name">工具</span>
+                            <span class="category-count">{{ site.categories['工具'].size }}</span>
                         </div>
                     </div>
 

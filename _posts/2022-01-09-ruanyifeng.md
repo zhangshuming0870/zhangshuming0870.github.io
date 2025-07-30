@@ -2,7 +2,7 @@
 layout: post
 title: "阮一峰老师的技术文档合集"
 date: 2022-01-09
-categories: [其他]
+categories: [工具]
 tags: [外部站点,ruanyifeng]
 author: zhangshuming
 ---
