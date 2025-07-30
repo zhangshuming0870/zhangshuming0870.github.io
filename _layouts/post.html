@@ -1098,7 +1098,7 @@
     <div class="header">
         <div class="header-content">
             <div>
-                <a href="/post" class="logo">zhangshuming技术博客</a>
+                <a href="/post.html" class="logo">zhangshuming技术博客</a>
             </div>
             <div class="header-controls">
                 <div class="search-container">
@@ -1229,28 +1229,33 @@
     </footer>
 
     <script>
-        // Sample blog posts data (in a real implementation, this would come from your Jekyll data)
-        const blogPosts = [
-            {
-                title: "深入理解 rem 单位：原理与实战",
-                excerpt: "在前端开发中，rem（root em）单位因其强大的响应式能力和易维护性，成为现代网页布局的首选单位之一。那么，rem 到底是什么？它是如何工作的？又该如何在项目中高效使用？本文将带你全面了解 rem 单位的原理、用法及最佳实践。",
-                url: "/2022/06/12/rem.html",
-                date: "2022-06-12",
-                categories: ["前端开发", "CSS"],
-                tags: ["rem", "响应式设计", "CSS单位"]
-            },
-            {
-                title: "Markdown 使用指南",
-                excerpt: "这是一篇展示 Markdown 各种功能的示例文章。让我们来看看 Markdown 的强大功能！从基本的文本格式化到复杂的表格和数学公式，Markdown 都能轻松应对。掌握 Markdown 将极大提升你的文档编写效率。",
-                url: "/2023/06/04/test.html",
-                date: "2023-06-04",
-                categories: ["教程", "Markdown"],
-                tags: ["markdown", "教程", "文档"]
+        // 文章数据 - 从JSON文件加载
+        let blogPosts = [];
+
+        // 加载文章数据
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('/posts-data.json');
+                const data = await response.json();
+                blogPosts = data.posts;
+            } catch (error) {
+                console.error('加载文章数据失败:', error);
+                // 如果加载失败，使用默认数据
+                blogPosts = [
+                    {
+                        title: "Ubuntu 安装宝塔面板教程",
+                        excerpt: "宝塔面板是一款简单好用的服务器运维管理面板，支持一键部署 LNMP/LAMP、网站、数据库、FTP 等，极大简化了服务器管理。",
+                        url: "/2024/06/12/ubuntu-bt-panel.html",
+                        date: "2024-06-12",
+                        categories: ["Linux", "运维"],
+                        tags: ["宝塔", "Ubuntu", "面板", "运维"]
+                    }
+                ];
             }
-        ];
+        }
 
         // Search functionality
-        function performSearch() {
+        async function performSearch() {
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
             const query = searchInput.value.trim().toLowerCase();
@@ -1258,6 +1263,11 @@
             if (query.length === 0) {
                 searchResults.classList.remove('active');
                 return;
+            }
+
+            // 确保文章数据已加载
+            if (blogPosts.length === 0) {
+                await loadBlogPosts();
             }
 
             const results = blogPosts.filter(post => {
@@ -1335,7 +1345,7 @@
         }
 
         // Initialize theme on page load
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', async function () {
             const savedTheme = localStorage.getItem('theme') || 'light';
             const html = document.documentElement;
             const themeIcon = document.getElementById('theme-icon');
@@ -1348,6 +1358,9 @@
             } else {
                 themeIcon.textContent = '🌙';
             }
+
+            // 加载文章数据
+            await loadBlogPosts();
         });
 
         // Add smooth scrolling for anchor links

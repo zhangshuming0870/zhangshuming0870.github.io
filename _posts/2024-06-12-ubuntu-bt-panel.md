@@ -62,10 +62,80 @@ http://服务器IP:8888
 
 用终端输出的账号和密码登录即可。
 
+## 宝塔面板常用命令
+
+### 启动宝塔面板
+
+```bash
+sudo bt start
+```
+
+### 停止宝塔面板
+
+```bash
+sudo bt stop
+```
+
+### 重启宝塔面板
+
+```bash
+sudo bt restart
+```
+
+### 查看面板状态
+
+```bash
+sudo bt status
+```
+
+### 查看面板信息
+
+```bash
+sudo bt default
+```
+
+### 修改面板端口
+
+```bash
+sudo bt 14
+```
+
+### 修改面板密码
+
+```bash
+sudo bt 5
+```
+
+### 卸载宝塔面板
+
+```bash
+sudo bt uninstall
+```
+
+### 查看面板日志
+
+```bash
+sudo bt 22
+```
+
+### 修复面板
+
+```bash
+sudo bt repair
+```
+
+### 更新面板
+
+```bash
+sudo bt update
+```
+
 ## 常见问题
+7月28日宝塔无法正常运行，因为误删了配置文件
+运行报错缺少配置文件
 
-- **面板无法访问**：检查服务器安全组/防火墙是否放行 8888 端口。
-- **安装失败**：建议重试或更换网络环境。
-- **面板安全**：安装后请及时修改默认账号密码，并开启面板安全设置。
 
----
+###解决 强制重新安装
+```
+if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh
+```
