@@ -1,12 +1,14 @@
 ---
-layout: post
-title: "openlayers-quick-tools MoveController工具"
+author: zhangshuming
+categories:
+- 前端
 date: 2023-07-04
-categories: [前端]
-tags: [openlayers-quick-tools]
-excerpt: 'openlayers-quick-tools的MoveController工具，用于快速实现物体移动'
+excerpt: openlayers-quick-tools的MoveController工具，用于快速实现物体移动
+layout: post
+tags:
+- openlayers-quick-tools
+title: openlayers-quick-tools MoveController工具
 ---
-
 # MoveController 物体移动控制工具类
 
 ## 概述

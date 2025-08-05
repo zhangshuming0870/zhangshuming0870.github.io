@@ -1,12 +1,20 @@
 ---
-layout: post
-title: "Mac权限管理完全指南：从基础到高级操作"
+author: zhangshuming
+categories:
+- 其他
 date: 2023-01-15
-categories: [其他]
-tags: [macOS, 权限管理, 系统安全, 终端操作, chmod, chown, 文件权限]
-excerpt: '深入解析macOS权限系统，包括文件权限、用户权限、应用权限等各个方面，并提供实用的权限管理技巧和常见问题解决方案。'
+excerpt: 深入解析macOS权限系统，包括文件权限、用户权限、应用权限等各个方面，并提供实用的权限管理技巧和常见问题解决方案。
+layout: post
+tags:
+- macOS
+- 权限管理
+- 系统安全
+- 终端操作
+- chmod
+- chown
+- 文件权限
+title: Mac权限管理完全指南：从基础到高级操作
 ---
-
 # Mac权限管理完全指南：从基础到高级操作
 
 > 本文全面介绍macOS权限系统，从基础概念到高级操作，帮助用户更好地理解和管理Mac系统的各种权限。

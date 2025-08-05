@@ -1265,7 +1265,7 @@
         }
 
         // Search functionality
-        async function performSearch() {
+        async async function performSearch() {
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
             const query = searchInput.value.trim().toLowerCase();
@@ -1274,6 +1274,19 @@
                 searchResults.classList.remove('active');
                 return;
             }
+
+            // 确保文章数据已加载
+            if (blogPosts.length === 0) {
+                await loadBlogPosts();
+            }
+
+            const results = blogPosts.filter(post => {
+                const searchText = `${post.title} ${post.excerpt} ${post.categories.join(' ')} ${post.tags.join(' ')}`.toLowerCase();
+                return searchText.includes(query);
+            });
+
+            displaySearchResults(results);
+        }
 
             // 确保文章数据已加载
             if (blogPosts.length === 0) {
