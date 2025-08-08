@@ -31,6 +31,7 @@ Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
 
 Next.js 15+ 要求所有使用客户端 hooks 的组件必须包装在 Suspense 边界中。
 
+![错误截图1](/assets/nextjsbuild/Snipaste_2025-08-08_20-32-51.png)
 ### 解决方案
 
 ```tsx
