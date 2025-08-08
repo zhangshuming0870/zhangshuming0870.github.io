@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Next.js 构建错误分析与解决方案"
-date: 2025-08-08 20:22:00 +0800
-categories: [Next.js, React, 前端开发, 错误处理]
-tags: [构建错误, suspense, useSearchParams, 权限问题, 类型错误]
-author: shatang
+title: "nextjs 打包过程中遇到的问题"
+date: 2025-03-19
+categories: [前端]
+tags: [nextjs,'错误处理']
+author: zhangshuming
 ---
 
 # Next.js 构建错误分析与解决方案
@@ -248,17 +248,6 @@ A: 使用 `lsof -i:端口号` 查看占用进程，然后使用 `kill -9 PID` �
 
 A: 使用可选链操作符 (`?.`) 和空值合并操作符 (`??`) 处理可能为 null 的值。
 
-## 总结
 
-通过系统性地解决这些构建错误，我们成功地将 Next.js 项目从开发环境迁移到了生产环境。关键要点：
-
-- ✅ **正确使用 Suspense 边界**
-- ✅ **处理 TypeScript 类型安全**
-- ✅ **解决文件权限问题**
-- ✅ **避免端口冲突**
-
-这些解决方案确保了项目在各种环境下都能正常工作。
 
 ---
-
-*本文档基于 Next.js 15.3.3 版本编写，适用于 App Router 架构。* 
