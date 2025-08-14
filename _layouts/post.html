@@ -1632,12 +1632,9 @@
 
         // 分类和标签功能
         function initializeCategoryAndTagEvents() {
-            console.log('初始化分类和标签功能...');
             
             // 从posts-data.json加载文章数据
             loadBlogPosts().then(() => {
-                console.log('文章数据加载完成，共', blogPosts.length, '篇文章');
-                console.log('文章数据示例:', blogPosts[0]);
                 
                 // 当前选中的分类和标签
                 let currentCategory = '前端';
@@ -1645,10 +1642,8 @@
 
                 // 分类点击事件
                 document.querySelectorAll('.category-tab').forEach(tab => {
-                    console.log('找到分类标签:', tab.getAttribute('data-category'));
                     tab.addEventListener('click', function () {
                         const category = this.getAttribute('data-category');
-                        console.log('点击分类:', category);
 
                         // 更新分类选中状态
                         document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
@@ -1667,7 +1662,6 @@
                 });
 
                 // 初始化显示前端分类
-                console.log('初始化前端分类显示...');
                 updateTagsList('前端', blogPosts);
                 updatePostsList('前端', null, blogPosts);
             }).catch(error => {
