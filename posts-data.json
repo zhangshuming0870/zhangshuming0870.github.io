@@ -3,7 +3,7 @@
     {
       "title": "openlayers-quick-tools MoveController工具",
       "excerpt": "MoveController 物体移动控制工具类\n\n概述\n\n`MoveController` 是一个简单易用的 OpenLayers 物体移动控制工具类，提供了多种移动动画功能，让您可以轻松控制地图上要素的移动效果。支持基于时间（duration）和基于速度（speed）两种移动模式。\n\n功能特性\n...",
-      "url": "/前端/2023/07/04/openlayers-quick-tools-move.html",
+      "url": "/前端/2023/07/04/2023-07-04-openlayers-quick-tools-move.html",
       "date": "2023-07-04",
       "categories": [
         "前端"
@@ -15,7 +15,7 @@
     {
       "title": "Mac 下 MySQL 使用指南",
       "excerpt": "Mac 下 MySQL 使用指南\n\n1. 安装 MySQL\n\n方式一：通过 Homebrew 安装\n```bash\nbrew install mysql\n```\n\n方式二：通过 DMG 安装包\n1. 访问 [MySQL 官网](https://dev.mysql.com/downloads/mysq...",
-      "url": "/其他/2024/09/10/mac-mysql-guide.html",
+      "url": "/其他/2024/09/10/2024-09-10-mac-mysql-guide.html",
       "date": "2024-09-10",
       "categories": [
         "其他"
@@ -28,7 +28,7 @@
     {
       "title": "Markdown 使用指南",
       "excerpt": "Markdown 使用指南\n\n这是一篇展示 Markdown 各种功能的示例文章。让我们来看看 Markdown 的强大功能！\n\n1. 文本格式化\n\n1.1 基本文本样式\n\n这是**粗体**文本，这是*斜体*文本，这是***粗斜体***文本。\n\n这是`行内代码`，这是 ~~删除线~~ 文本。\n\n1....",
-      "url": "/其他/2023/06/04/test.html",
+      "url": "/其他/2023/06/04/2023-06-04-test.html",
       "date": "2023-06-04",
       "categories": [
         "其他"
@@ -41,26 +41,9 @@
       ]
     },
     {
-      "title": "Mac上Brew环境变量问题解决方案",
-      "excerpt": "问题描述\n\n在Mac系统上，发现brew命令无法使用，同时基本的系统命令（如`cat`、`ls`等）也无法正常执行。通过检查发现是环境变量PATH配置出现了严重问题。\n\n问题诊断过程\n\n1. 检查当前PATH环境变量\n\n```bash\necho $PATH\n```\n\n**输出结果：**\n```\n/o...",
-      "url": "/其他/2025/08/05/2024-07-30-mac-brew-environment-fix.html",
-      "date": "2025-08-05",
-      "categories": [
-        "其他"
-      ],
-      "tags": [
-        "brew",
-        "homebrew",
-        "环境变量",
-        "PATH",
-        "zsh",
-        "macOS"
-      ]
-    },
-    {
       "title": "openlayers-quick-tools FlyTo工具",
       "excerpt": "FlyTo 飞行动画工具使用指南\n\n{: .lead}\nFlyTo 是一个强大的 OpenLayers 飞行动画工具类，提供了多种地图视图动画功能，让您的地图交互更加流畅和生动。\n\n目录\n\n{: .toc}\n* TOC\n{:toc}\n\n概述\n\nFlyTo 工具类提供了以下主要功能：\n\n- **坐标飞...",
-      "url": "/前端/2023/08/02/openlayers-quick-tools-flyto.html",
+      "url": "/前端/2023/08/02/2023-08-02-openlayers-quick-tools-flyto.html",
       "date": "2023-08-02",
       "categories": [
         "前端"
@@ -73,7 +56,7 @@
     {
       "title": "深入理解 rem 单位：原理与实战",
       "excerpt": "深入理解 rem 单位：原理与实战 {#rem-introduction}\n\n在前端开发中，`rem`（root em）单位因其强大的响应式能力和易维护性，成为现代网页布局的首选单位之一。那么，`rem` 到底是什么？它是如何工作的？又该如何在项目中高效使用？本文将带你全面了解 `rem` 单位的原...",
-      "url": "/前端/2022/06/12/rem.html",
+      "url": "/前端/2022/06/12/2022-06-12-rem.html",
       "date": "2022-06-12",
       "categories": [
         "前端"
@@ -88,7 +71,7 @@
     {
       "title": "Ubuntu 安装宝塔面板教程",
       "excerpt": "Ubuntu 安装宝塔面板教程\n\n目录\n\n1. [宝塔面板简介](#宝塔面板简介)\n2. [安装前准备](#安装前准备)\n3. [安装步骤](#安装步骤)\n4. [常见问题](#常见问题)\n\n\n\n宝塔面板简介\n\n宝塔面板是一款简单好用的服务器运维管理面板，支持一键部署 LNMP/LAMP、网站、数据...",
-      "url": "/Linux/2024/06/12/ubuntu-bt-panel.html",
+      "url": "/linux/2024/06/12/2024-06-12-ubuntu-bt-panel.html",
       "date": "2024-06-12",
       "categories": [
         "Linux",
@@ -102,9 +85,22 @@
       ]
     },
     {
+      "title": "git lfs",
+      "excerpt": "Git LFS 设置过程记录\n\n问题背景\n\n在生产环境中，bedroom页面访问缓慢，原因是Git仓库中包含了大量大文件：\n- 视频文件：`taikong.mp4` (57MB), `taikong3.mp4` (111MB) 等\n- HDR文件：多个25MB+的HDR全景图像文件\n- 3D模型文件...",
+      "url": "/其他/2025/03/29/2025-03-29-gitlfs.html",
+      "date": "2025-03-29",
+      "categories": [
+        "其他"
+      ],
+      "tags": [
+        "git",
+        "git lfs"
+      ]
+    },
+    {
       "title": "Maven 使用教程 - 从入门到精通",
       "excerpt": "Maven 使用教程 - 从入门到精通\n\n1. Maven 简介\n\nMaven 是一个强大的项目管理和构建工具，主要用于 Java 项目。它提供了一套标准化的项目结构、依赖管理和构建生命周期。\n\n1.1 Maven 的优势\n- **标准化项目结构**：统一的目录布局\n- **依赖管理**：自动下载和...",
-      "url": "/工具/2024/12/19/maven-tutorial.html",
+      "url": "/工具/2024/12/19/2024-12-19-maven-tutorial.html",
       "date": "2024-12-19",
       "categories": [
         "工具"
@@ -119,7 +115,7 @@
     {
       "title": "本地项目docker部署",
       "excerpt": "Docker 完整指南 - 基于OpenLayers项目案例\n\n目录\n\n1. [Docker安装](#docker安装)\n2. [Docker基础概念](#docker基础概念)\n3. [项目Docker化](#项目docker化)\n4. [生产环境打包部署](#生产环境打包部署)\n5. [开发环境...",
-      "url": "/后端/2023/04/07/docker.html",
+      "url": "/后端/2023/04/07/2023-04-07-docker.html",
       "date": "2023-04-07",
       "categories": [
         "后端"
@@ -127,6 +123,19 @@
       "tags": [
         "docker",
         "本地开发"
+      ]
+    },
+    {
+      "title": "nextjs 打包过程中遇到的问题",
+      "excerpt": "Next.js 构建错误分析与解决方案\n\n错误概览\n\n在 Next.js 项目构建过程中，我们遇到了几个典型的错误类型：\n\n1. **Suspense 边界问题**\n2. **TypeScript 类型错误**\n3. **文件权限问题**\n4. **端口占用问题**\n\n错误一：Suspense 边界...",
+      "url": "/前端/2025/03/19/2025-03-19-nextjs-build-errors-analysis.html",
+      "date": "2025-03-19",
+      "categories": [
+        "前端"
+      ],
+      "tags": [
+        "nextjs",
+        "错误处理"
       ]
     },
     {
@@ -146,7 +155,7 @@
     {
       "title": "Mac权限管理完全指南：从基础到高级操作",
       "excerpt": "Mac权限管理完全指南：从基础到高级操作\n\n> 本文全面介绍macOS权限系统，从基础概念到高级操作，帮助用户更好地理解和管理Mac系统的各种权限。\n\n1. macOS权限系统概述\n\nmacOS采用基于Unix的权限系统，主要包括：\n\n- **文件权限**：控制文件的读、写、执行权限\n- **用户权...",
-      "url": "/其他/2023/01/15/mac-permissions-guide.html",
+      "url": "/其他/2023/01/15/2023-01-15-mac-permissions-guide.html",
       "date": "2023-01-15",
       "categories": [
         "其他"
@@ -164,7 +173,7 @@
     {
       "title": "pm2 使用方式",
       "excerpt": "pm2 使用方式\n\n目录\n\n1. [pm2 简介](#pm2-简介)\n2. [安装 pm2](#安装-pm2)\n3. [常用命令](#常用命令)\n4. [进程管理](#进程管理)\n5. [日志查看](#日志查看)\n6. [开机自启](#开机自启)\n7. [常见问题](#常见问题)\n\n\n\npm2 简介...",
-      "url": "/后端/2024/06/12/pm2-usage.html",
+      "url": "/后端/2024/06/12/2024-06-12-pm2-usage.html",
       "date": "2024-06-12",
       "categories": [
         "后端"
@@ -190,13 +199,25 @@
     {
       "title": "各种问题汇总",
       "excerpt": "问题汇总\n\n2023-09-12 出现的问题,导致git提交不上去\n\n![1](/assets/question/1/Snipaste_2025-07-21_09-17-24.png)\n修改了.git 配置文件\n![2](/assets/question/1/Snipaste_2025-07-21_...",
-      "url": "/其他/2023/09/12/question.html",
+      "url": "/其他/2023/09/12/2023-09-12-question.html",
       "date": "2023-09-12",
       "categories": [
         "其他"
       ],
       "tags": [
         "问题"
+      ]
+    },
+    {
+      "title": "收录各种好玩的网站",
+      "excerpt": "收录各种好玩的网站\n\n目录\n\n1. [3D类](#3D类)\n\n\n\n3D类\n\n东京实时地铁的3D网站\n- **东京3D地铁**: https://minitokyo3d.com/",
+      "url": "/工具/2022/02/12/2022-02-12-funny-site.html",
+      "date": "2022-02-12",
+      "categories": [
+        "工具"
+      ],
+      "tags": [
+        "站点"
       ]
     },
     {
@@ -216,7 +237,7 @@
     {
       "title": "Jekyll 本地启动常见问题与解决全记录",
       "excerpt": "Jekyll 本地启动常见问题与解决全记录\n\n> 本文记录了在 macOS 上本地启动 Jekyll 博客时遇到的 Ruby 版本、bundler 依赖等问题的完整排查与解决过程，适合新手参考。\n\n1. 问题现象\n\n在终端执行 `bundle install` 时，报错如下：\n\n```\nCould ...",
-      "url": "/其他/2023/07/04/jekyll-startup.html",
+      "url": "/其他/2023/07/04/2023-07-04-jekyll-startup.html",
       "date": "2023-07-04",
       "categories": [
         "其他"
@@ -231,9 +252,22 @@
       ]
     },
     {
+      "title": "nextjs 打包过程中遇到的问题",
+      "excerpt": "Next.js Suspense 边界问题解决方案\n\n问题描述\n\n在使用 Next.js App Router 时，当组件中使用了 `useSearchParams()` hook 而没有正确包装在 Suspense 边界中时，会出现以下错误：\n\n```\nuseSearchParams() shou...",
+      "url": "/前端/2025/04/01/2025-04-01-nextjs-build-error1.html",
+      "date": "2025-04-01",
+      "categories": [
+        "前端"
+      ],
+      "tags": [
+        "nextjs",
+        "错误处理"
+      ]
+    },
+    {
       "title": "nginx常见问题",
       "excerpt": "nginx常见问题\n\n目录\n\n1. [Windows](#windows)\n2. [Ubuntu](#ubuntu)\n3. [CentOS](#centos)\n4. [问题汇总](#问题汇总)\n5. [配置](#配置)\n\n\n\nWindows\n\n查看nginx安装位置\n```bash\n查看nginx进...",
-      "url": "/前端/2022/06/12/nginx.html",
+      "url": "/前端/2022/06/12/2022-06-12-nginx.html",
       "date": "2022-06-12",
       "categories": [
         "前端"
@@ -246,7 +280,7 @@
     {
       "title": "工具集",
       "excerpt": "mac 各种操作解决方案\n\n目录、\n\n1. [brew](#brew)\n\n\n\n安装brew\n控制台输入\n```\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)...",
-      "url": "/其他/2022/02/12/mac.html",
+      "url": "/其他/2022/02/12/2022-02-12-mac.html",
       "date": "2022-02-12",
       "categories": [
         "其他"
@@ -259,7 +293,7 @@
     {
       "title": "阮一峰老师的技术文档合集",
       "excerpt": "技术网站合集\n\n目录\n\n1. [阮一峰技术文档](#阮一峰技术文档)\n\n\n\n\n阮一峰技术文档\n\n前端开发\n- **Git教程**: https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html\n- **JavaScript教程**: htt...",
-      "url": "/工具/2022/01/09/ruanyifeng.html",
+      "url": "/工具/2022/01/09/2022-01-09-ruanyifeng.html",
       "date": "2022-01-09",
       "categories": [
         "工具"
@@ -270,9 +304,22 @@
       ]
     },
     {
+      "title": "threejs 各种形状的添加",
+      "excerpt": "Three.js 形状创建指南\n\n本文档详细介绍Three.js中各种几何体的创建方法和参数含义，帮助开发者快速掌握3D形状的创建技巧。\n\n目录\n\n- [基础几何体](#基础几何体)\n- [复杂几何体](#复杂几何体)\n- [自定义几何体](#自定义几何体)\n- [材质和渲染](#材质和渲染)\n- ...",
+      "url": "/前端/2025/02/17/2025-02-17-threejs-shapes.html",
+      "date": "2025-02-17",
+      "categories": [
+        "前端"
+      ],
+      "tags": [
+        "前端",
+        "threejs"
+      ]
+    },
+    {
       "title": "工具集",
       "excerpt": "工具集\n\n目录\n\n1. [AI工具](#AI工具)\n2. [图片工具](#图片工具)\n3. [数据库工具](#数据库工具)\n4. [浏览器插件](#浏览器插件)\n\n\n\nAI工具\n\n国外AI图片、视频生成工具\n- **Pollo AI**: https://pollo.ai/zh/pricing\n\n国...",
-      "url": "/工具/2022/02/12/tools.html",
+      "url": "/工具/2022/02/12/2022-02-12-tools.html",
       "date": "2022-02-12",
       "categories": [
         "工具"
