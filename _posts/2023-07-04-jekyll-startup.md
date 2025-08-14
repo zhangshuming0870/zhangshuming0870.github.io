@@ -1,17 +1,10 @@
 ---
 author: zhangshuming
-categories:
-- 其他
+categories: [其他]
 date: 2023-07-04
 excerpt: 记录一次在 macOS 上本地启动 Jekyll 博客遇到 Ruby 版本、bundler 依赖等问题的完整排查与解决过程，适合新手参考。
 layout: post
-tags:
-- jekyll
-- Ruby
-- rbenv
-- bundler
-- 折腾记录
-- 环境配置
+tags: [jekyll, Ruby, rbenv, bundler, 折腾记录, 环境配置 ]
 title: Jekyll 本地启动常见问题与解决全记录
 ---
 # Jekyll 本地启动常见问题与解决全记录

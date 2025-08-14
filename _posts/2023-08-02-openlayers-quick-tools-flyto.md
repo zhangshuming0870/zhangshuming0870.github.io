@@ -1,13 +1,10 @@
 ---
 author: zhangshuming
-categories:
-- 前端
+categories: [前端]
 date: 2023-08-02
 excerpt: openlayers-quick-tools的FlyTo工具，用于快速实现物体移动
 layout: post
-tags:
-- openlayers-quick-tools
-- flyto
+tags: [openlayers-quick-tools, flyto]
 title: openlayers-quick-tools FlyTo工具
 ---
 # FlyTo 飞行动画工具使用指南

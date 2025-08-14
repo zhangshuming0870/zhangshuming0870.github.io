@@ -2,7 +2,7 @@
 layout: post
 title: "Ubuntu 安装宝塔面板教程"
 date: 2024-06-12
-categories: [Linux, 运维]
+categories: [后端]
 tags: [宝塔, Ubuntu, 面板, 运维]
 author: zhangshuming
 ---
