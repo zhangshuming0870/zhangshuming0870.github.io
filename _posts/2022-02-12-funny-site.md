@@ -30,6 +30,9 @@ author: zhangshuming
 
 ## AI
 ### 素材库
+- **AI图片素材库**: <a href="https://chatimg.ai/zh/gallery?category=art" target="_blank">https://chatimg.ai/zh/gallery?category=art</a>
+
+
 
 
 
