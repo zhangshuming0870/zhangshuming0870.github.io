@@ -5,6 +5,7 @@
   },
   "framework": "static",
   "installCommand": "gem install bundler && bundle install",
-  "rootDirectory": "."
+  "rootDirectory": ".",
+  "startCommand": "npx serve _site -p $PORT"
 }
 
