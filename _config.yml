@@ -1,3 +1,19 @@
 # Site settings
 title: zhangshuming Blog
 description: zhangshuming blog
+
+# Jekyll configuration
+plugins:
+  - jekyll-sass-converter
+  - jekyll-watch
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .gitignore
+  - README.md
+  - ZEABUR_DEPLOY.md
