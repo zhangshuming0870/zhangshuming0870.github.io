@@ -1,0 +1,6 @@
+# Zeabur 忽略文件
+# 防止 Zeabur 误判为 Rails 项目
+
+# 明确指定这不是 Rails 项目
+# 没有 Rakefile，不需要运行 rake 命令
+
