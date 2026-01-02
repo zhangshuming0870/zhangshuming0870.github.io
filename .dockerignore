@@ -1,0 +1,46 @@
+# Docker ignore file
+# 排除不需要的文件，减小镜像大小
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# 构建输出（会在 Dockerfile 中重新构建）
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+
+# 依赖（会在 Dockerfile 中重新安装）
+node_modules
+vendor
+.bundle
+
+# 日志和临时文件
+*.log
+error.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+
+# 文档文件（不需要在镜像中）
+*.md
+!README.md
+ZEABUR_*.md
+
+# 备份文件
+*.backup
+zeabur.json.backup
+
+# 测试和开发文件
+test/
+spec/
+_posts/2025-08-11-gis.md
+
+# IDE 文件
+.vscode
+.idea
+*.code-workspace
+
