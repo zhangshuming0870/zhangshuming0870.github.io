@@ -67,3 +67,4 @@ web: npx serve _site -p $PORT
    - 检查是否有 `config/application.rb` 或其他 Rails 相关文件
    - 确保 Gemfile 中没有 rails gem
 
+
