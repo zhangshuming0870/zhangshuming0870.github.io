@@ -6,12 +6,6 @@
   "framework": "static",
   "installCommand": "gem install bundler && bundle install",
   "rootDirectory": ".",
-  "startCommand": "npx serve _site -p $PORT",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
-    }
-  ]
+  "startCommand": "npx serve _site -p $PORT"
 }
 
