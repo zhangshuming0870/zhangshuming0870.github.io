@@ -28,11 +28,6 @@ error.log
 # 文档文件（不需要在镜像中）
 *.md
 !README.md
-ZEABUR_*.md
-
-# 备份文件
-*.backup
-zeabur.json.backup
 
 # 测试和开发文件
 test/
@@ -43,4 +38,5 @@ _posts/2025-08-11-gis.md
 .vscode
 .idea
 *.code-workspace
+
 

@@ -16,4 +16,3 @@ exclude:
   - .git
   - .gitignore
   - README.md
-  - ZEABUR_DEPLOY.md
